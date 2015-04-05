@@ -5,7 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 /**
  * Supernaturals class
  *
- * @author Eric Goodwin
+ * @author Eric
  */
 public final class Supernaturals extends JavaPlugin {
   @Override

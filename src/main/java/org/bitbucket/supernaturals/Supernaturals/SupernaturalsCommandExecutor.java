@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 /**
  * Command executor.
  *
- * @author Eric Goodwin
+ * @author Eric
  */
 public class SupernaturalsCommandExecutor implements CommandExecutor {
   private final Supernaturals plugin;
