@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
  */
 public class Race {
   public String raceName;
-  protected Player player;
+  protected final Player player;
 
   public Race(Player player) {
     this.player = player;
@@ -18,3 +18,10 @@ public class Race {
 
   public void moveEvent(PlayerMoveEvent event) {};
 }
+
+// for the respawn event later.
+//plugin.getServer().getScheduler().scheduleAsyncDelayedTask(plugin, new Runnable() {
+//public void run() {
+//    player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 18000, 2));
+//    }
+//    }, 20);
