@@ -5,7 +5,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 /**
- * Created by Eric on 5/04/15.
+ * Command executor.
+ *
+ * @author Eric Goodwin
  */
 public class SupernaturalsCommandExecutor implements CommandExecutor {
   private final Supernaturals plugin;

@@ -3,7 +3,9 @@ package org.bitbucket.supernaturals.Supernaturals;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
- * Created by Eric on 5/04/15.
+ * Supernaturals class
+ *
+ * @author Eric Goodwin
  */
 public final class Supernaturals extends JavaPlugin {
   @Override
