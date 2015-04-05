@@ -1,0 +1,10 @@
+name: Supernaturals
+main: org.bitbucket.supernaturals.Supernaturals
+version: 1.0.0-alpha
+
+commands:
+  setrace:
+    description: Set your (supernatural) race.
+    usage: /setrace [race]
+    permission: Supernaturals.setrace
+    permission-message: Please ask an OP to set your race. You don't have <permission>
