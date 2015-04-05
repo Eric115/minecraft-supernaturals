@@ -4,15 +4,17 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerMoveEvent;
 
 /**
- * Abstract Race class for base of supernatural races.
+ * Race class for base of supernatural races.
  *
  * @author Eric
  */
-public abstract class Race {
+public class Race {
   public String raceName;
   protected Player player;
 
-  public void moveEvent(PlayerMoveEvent event) {
-    return;
-  };
+  public Race(Player player) {
+    this.player = player;
+  }
+
+  public void moveEvent(PlayerMoveEvent event) {};
 }
