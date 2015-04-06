@@ -23,7 +23,7 @@ public class Vampire extends Race {
   /**
    * Handles when the player moves.
    *
-   * @param event
+   * @param event move event
    */
   @Override
   public void moveEvent(PlayerMoveEvent event) {
