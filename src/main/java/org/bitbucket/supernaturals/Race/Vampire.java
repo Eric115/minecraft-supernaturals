@@ -39,7 +39,7 @@ public class Vampire extends Race {
 
   private void setDarkAbilities() {
     // abilities need to be cleared before they are set here again.
-
+    clearAbilities();
     // Maybe these should be moved into a list and added with a loop?
     player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 99999, 0));
     player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 99999, 1));
@@ -50,6 +50,8 @@ public class Vampire extends Race {
   }
 
   private void setLightAbilities() {
+    clearAbilities();
+
     player.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 250, 2));
     player.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 99999, 1));
     hasDarkAbilities = false;
