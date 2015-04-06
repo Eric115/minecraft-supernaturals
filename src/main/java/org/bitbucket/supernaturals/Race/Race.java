@@ -3,7 +3,6 @@ package org.bitbucket.supernaturals.Race;
 import java.util.ArrayList;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerMoveEvent;
-import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionEffectType;
 
 /**
@@ -17,6 +16,7 @@ public class Race {
 
   public Race(Player player) {
     this.player = player;
+    player.sendMessage("You are now a " + raceName);
   }
 
   public void moveEvent(PlayerMoveEvent event) {};
