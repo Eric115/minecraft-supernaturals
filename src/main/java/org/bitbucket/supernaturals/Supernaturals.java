@@ -1,6 +1,7 @@
-package org.bitbucket.supernaturals.Supernaturals;
+package org.bitbucket.supernaturals;
 
 import org.bitbucket.supernaturals.Race.Race;
+import org.bitbucket.supernaturals.SupernaturalsCommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Map;

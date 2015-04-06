@@ -1,7 +1,6 @@
 name: Supernaturals
-main: org.bitbucket.supernaturals.Supernaturals
+main: org.bitbucket.supernaturals.Supernaturals.Supernaturals
 version: 1.0.0-alpha
-
 commands:
   setrace:
     description: Set your (supernatural) race.

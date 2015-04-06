@@ -1,4 +1,4 @@
-package org.bitbucket.supernaturals.Supernaturals;
+package org.bitbucket.supernaturals;
 
 import org.bitbucket.supernaturals.Race.*;
 
