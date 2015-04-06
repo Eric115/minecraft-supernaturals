@@ -31,13 +31,30 @@ public final class Supernaturals extends JavaPlugin {
     // Logic for when disabled.
   }
 
-  public Race getRaceInstance(Player player) throws IllegalArgumentException {
-    String playerName = player.getName();
-
+  /**
+   * Get the race instance for a specific player.
+   *
+   * @param playerName name of player
+   * @return Race instance.
+   *
+   * @throws IllegalArgumentException if player has no race. See hasRace().
+   */
+  public Race getRaceInstance(String playerName) throws IllegalArgumentException {
     if (pluginData.containsKey(playerName)) {
-      return pluginData.get(player.getName());
+      return pluginData.get(playerName);
     } else {
       throw new IllegalArgumentException(playerName + " has no race!");
     }
+  }
+
+  /**
+   * Check if a player has a race set in pluginData.
+   *
+   * @param playerName the name of the player.
+   *
+   * @return true for has race, false for no race.
+   */
+  public boolean hasRace(String playerName) {
+    return pluginData.containsKey(playerName);
   }
 }

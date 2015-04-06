@@ -20,7 +20,10 @@ public class SupernaturalsPlayerListener implements Listener {
 
   @EventHandler
   public void onPlayerMove(PlayerMoveEvent event) {
-    // Dispatch move event to that player's Race instance.
-    plugin.getRaceInstance(event.getPlayer()).moveEvent(event);
+    String playerName = event.getPlayer().getName();
+    // Only dispatch if they have a race.
+    if (plugin.hasRace(playerName)) {
+      plugin.getRaceInstance(event.getPlayer().getName()).moveEvent(event);
+    }
   }
 }

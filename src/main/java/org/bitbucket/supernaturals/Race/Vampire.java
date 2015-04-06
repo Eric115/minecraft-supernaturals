@@ -13,11 +13,12 @@ import org.bukkit.potion.PotionEffectType;
  * @author Eric
  */
 public class Vampire extends Race {
-  public String raceName = "Vampire";
+  public final String raceName = "Vampire";
   private boolean hasDarkAbilities = false;
 
   public Vampire(Player player) {
     super(player);
+    setLightAbilities();
     player.sendMessage("You are now a " + raceName);
   }
 
@@ -30,11 +31,18 @@ public class Vampire extends Race {
   public void moveEvent(PlayerMoveEvent event) {
     Player player = event.getPlayer();
     World w = player.getWorld();
+    int light = w.getBlockAt(player.getLocation()).getLightLevel();
 
-    if (!hasDarkAbilities && (w.hasStorm() || w.getBlockAt(player.getLocation()).getLightFromSky() < 12)) {
-      setDarkAbilities();
-    } else if (hasDarkAbilities) {
-      setLightAbilities();
+    player.sendMessage(String.valueOf(light));
+
+    if (!w.hasStorm() && light > 13 && w.getTime() >= 0 && w.getTime() <= 12500) {
+      if (hasDarkAbilities) {
+        setLightAbilities();
+      }
+    } else {
+      if (!hasDarkAbilities) {
+        setDarkAbilities();
+      }
     }
   }
 
@@ -62,6 +70,6 @@ public class Vampire extends Race {
     player.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 250, 2));
     player.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 99999, 1));
     hasDarkAbilities = false;
-    player.sendMessage(ChatColor.RED + "You feel the sunlight weaken your body...");
+    player.sendMessage(ChatColor.YELLOW + "You feel the sunlight weaken your body...");
   }
 }
