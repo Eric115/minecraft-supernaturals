@@ -16,6 +16,7 @@ public class Race {
 
   public Race(Player player) {
     this.player = player;
+    clearAbilities();
   }
 
   public void moveEvent(PlayerMoveEvent event) {};
