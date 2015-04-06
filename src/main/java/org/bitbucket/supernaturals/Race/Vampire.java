@@ -18,7 +18,7 @@ public class Vampire extends Race {
 
   public Vampire(Player player) {
     super(player);
-    setLightAbilities();
+    setDarkAbilities();
     player.sendMessage("You are now a " + raceName);
   }
 

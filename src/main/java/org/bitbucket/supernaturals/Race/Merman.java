@@ -19,18 +19,19 @@ public class Merman extends Race {
 
   public Merman(Player player) {
     super(player);
+    setWaterAbilities();
     player.sendMessage("You are now a " + raceName);
   }
 
   public void moveEvent(PlayerMoveEvent event) {
     Player player = event.getPlayer();
     World w = player.getWorld();
+    Material currentBlock = w.getBlockAt(player.getLocation()).getType();
+    boolean inWater = (currentBlock.equals(Material.WATER) || currentBlock.equals(Material.STATIONARY_WATER));
 
-    if ((w.getBlockAt(player.getLocation()).getType() == Material.WATER ||
-        w.getBlockAt(player.getLocation()).getType() == Material.STATIONARY_WATER) && !hasWaterAbilities) {
-
+    if (!hasWaterAbilities && inWater) {
       setWaterAbilities();
-    } else {
+    } else if (hasWaterAbilities && !inWater) {
       setLandAbilities();
     }
   }
