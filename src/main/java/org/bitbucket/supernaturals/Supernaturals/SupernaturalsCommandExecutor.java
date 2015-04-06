@@ -1,5 +1,8 @@
 package org.bitbucket.supernaturals.Supernaturals;
 
+import org.bitbucket.supernaturals.Race.*;
+
+import org.bukkit.entity.Player;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -18,11 +21,20 @@ public class SupernaturalsCommandExecutor implements CommandExecutor {
 
   @Override
   public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-    // if sender instanceof Player
-    // check args length.
-    // Check if the player is online.
-    if (cmd.getName().equalsIgnoreCase("setrace")) {
-      return true;
+    if (sender instanceof Player && cmd.getName().equalsIgnoreCase("setrace")) {
+      Player player = (Player) sender;
+      Race newRace = null;
+
+      if (args[0].equals("vampire")) {
+        newRace = new Vampire(player);
+      }
+
+      if (newRace != null) {
+        plugin.pluginData.put(player.getName(), newRace);
+        return true;
+      } else {
+        return false;
+      }
     }
 
     return false;

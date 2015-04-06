@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
  * @author Eric
  */
 public final class Supernaturals extends JavaPlugin {
-  private Map<String, Race> pluginData;
+  protected Map<String, Race> pluginData;
 
   @Override
   public void onEnable() {
