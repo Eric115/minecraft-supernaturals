@@ -33,14 +33,19 @@ public class Vampire extends Race {
     World w = player.getWorld();
     int light = w.getBlockAt(player.getLocation()).getLightLevel();
 
-    player.sendMessage(String.valueOf(light));
-
+    // Glowstone has a light level of 14 so if a vampire hits a glowstone block...
     if (!w.hasStorm() && light > 13 && w.getTime() >= 0 && w.getTime() <= 12500) {
       if (hasDarkAbilities) {
+        player.setFireTicks(200);
         setLightAbilities();
       }
     } else {
       if (!hasDarkAbilities) {
+        // Don't stop the burning straight away.
+        if (player.getFireTicks() > 40) {
+          player.setFireTicks(40);
+        }
+
         setDarkAbilities();
       }
     }
@@ -68,7 +73,7 @@ public class Vampire extends Race {
     clearAbilities();
 
     player.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 250, 2));
-    player.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 99999, 1));
+    player.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 99999, 0));
     hasDarkAbilities = false;
     player.sendMessage(ChatColor.YELLOW + "You feel the sunlight weaken your body...");
   }
