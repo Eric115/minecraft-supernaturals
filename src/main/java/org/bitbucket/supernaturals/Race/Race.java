@@ -16,7 +16,6 @@ public class Race {
 
   public Race(Player player) {
     this.player = player;
-    player.sendMessage("You are now a " + raceName);
   }
 
   public void moveEvent(PlayerMoveEvent event) {};
