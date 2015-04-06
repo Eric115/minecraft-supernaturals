@@ -25,10 +25,13 @@ public class SupernaturalsCommandExecutor implements CommandExecutor {
       Player player = (Player) sender;
       Race newRace = null;
 
-      if (args[0].equals("vampire")) {
-        newRace = new Vampire(player);
-      } else if (args[0].equals("merman")) {
-        newRace = new Merman(player);
+      switch (args[0]) {
+        case "vampire":
+          newRace = new Vampire(player);
+        case "merman":
+          newRace = new Merman(player);
+        case "ghost":
+          newRace = new Ghost(player);
       }
 
       if (newRace != null) {
