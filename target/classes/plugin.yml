@@ -1,5 +1,5 @@
 name: Supernaturals
-main: org.bitbucket.supernaturals.Supernaturals.Supernaturals
+main: org.bitbucket.supernaturals.Supernaturals
 version: 1.0.0-alpha
 commands:
   setrace:
