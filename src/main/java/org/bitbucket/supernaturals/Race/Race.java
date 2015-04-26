@@ -10,7 +10,6 @@ import org.bukkit.potion.PotionEffectType;
  *
  * @author Eric
  */
-// This could be abstract??
 public class Race {
   protected final Player player;
 
