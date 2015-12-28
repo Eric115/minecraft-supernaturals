@@ -10,7 +10,7 @@ import org.bukkit.potion.PotionEffectType;
  *
  * @author Eric
  */
-public class Race {
+abstract public class Race {
   protected final Player player;
 
   public Race(Player player) {
