@@ -2,6 +2,7 @@ package org.bitbucket.supernaturals.Race;
 
 import java.util.ArrayList;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.potion.PotionEffectType;
 
@@ -18,7 +19,19 @@ abstract public class Race {
     this.clearAbilities();
   }
 
+  /**
+   * Event called when player moves.
+   *
+   * @param event
+   */
   public void moveEvent(PlayerMoveEvent event) {};
+
+  /**
+   * Event called when player uses an item.
+   *
+   * @param event
+   */
+  public void useEvent(PlayerInteractEvent event) {};
 
   public void clearAbilities() {
     ArrayList<PotionEffectType> potionEffects = getPotionEffectTypes();
