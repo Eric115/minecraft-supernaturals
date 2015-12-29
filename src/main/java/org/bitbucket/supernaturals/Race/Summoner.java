@@ -29,4 +29,5 @@ public class Summoner extends Race {
     // Wolf Egg
     player.getInventory().addItem(new ItemStack(Material.MONSTER_EGG, 1, (short) 95));
   }
+
 }

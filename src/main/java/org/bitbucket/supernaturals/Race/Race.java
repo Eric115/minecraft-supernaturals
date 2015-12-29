@@ -15,7 +15,7 @@ abstract public class Race {
 
   public Race(Player player) {
     this.player = player;
-    clearAbilities();
+    this.clearAbilities();
   }
 
   public void moveEvent(PlayerMoveEvent event) {};
