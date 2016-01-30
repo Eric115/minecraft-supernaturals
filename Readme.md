@@ -1,10 +1,10 @@
 Add supernatural races to a minecraft bukkit server.
 Still a work in progress, many races are not yet implemented.
 
-h2.Commands:
+**Commands:**
 /setrace [race]
 
-h2.Races:
+**Races:**
 Vampire - At night vampires have increased speed, strength, night vision and faster regeneration.
  During the day however, vampires will catch fire, are weakened and will be momentarily disorientated
  when stepping into the light.
